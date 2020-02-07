@@ -1,26 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+//menu component needs to be iterated
+
+class Menu extends Component {
+  constructor(props) {
+    super(props);
+    }
+
+    render() {
+      return (
+        <div className='menu col-md-6 offset-1'>
+          <h3>Appetizers</h3>
+          <h3>Entrees</h3>
+          <h3>Dessert</h3>
+        </div>
+
+
+      )
+    }
+
+  }
+
+
+
+
+class Header extends Component {
+  constructor(props) {
+    super(props); {
+
+    }
+  }
+
+  render() {
+    return (
+    <div className='row no-gutters header'>
+      <span className='title col-12'>Wild Thyme Gourmet</span>
     </div>
   );
+  }
 }
+
+
+
+class App extends Component {
+  constructor(props) {
+    super();
+  }
+
+  render() {
+  return (
+    <div className="container-fluid">
+
+
+    <Header />
+    <Menu />
+    </div>
+  );
+}}
 
 export default App;
