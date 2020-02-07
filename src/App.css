@@ -37,9 +37,17 @@ span {
 }
 
 .order {
+  text-align: justify;
   width: 30vw;
   background-color: #CBFFCF;
   margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.totals {
+  text-align: justify;
   display: flex;
   justify-content: space-between;
 }
