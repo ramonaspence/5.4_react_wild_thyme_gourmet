@@ -11,6 +11,14 @@ ul {
   list-style: none;
 }
 
+li {
+  font-size: 1.4rem;
+}
+
+span {
+  font-size: 1rem;
+}
+
 .title {
   font-size: 2rem;
 }
@@ -26,4 +34,12 @@ ul {
   width: 60vw;
   background-color: #CBFFCF;
   margin-top: 2rem;
+}
+
+.order {
+  width: 30vw;
+  background-color: #CBFFCF;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
 }
