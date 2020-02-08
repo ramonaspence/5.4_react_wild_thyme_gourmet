@@ -2,20 +2,19 @@ import React, {Component} from 'react';
 import './App.css';
 
 //menu component needs to be iterated
-const foodItems = [{type: '', id: 0, name: 'Pimento Cheese Ciabatta', price: '$3.99', description: 'Freshly baked Ciabatta bread, made with thyme and rosemary, served with pimento cheese', category: 'app'},
-                  {type: '', id: 1, name: 'Chips and Cheese, pub-style', price: 0, description: 'Fresh public-house-style chips made with Russet Potatos, served with your choice of blueu cheese', category: 'app'},
-                  {type: '', id: 2, name: 'Charcuterie Board', price: 0, description: 'Our specialty charcuterie board brings you our rosemary Focaccia, an assortment of the highest quality cheeses and meats available. Ask your server for today\'s Charcuterie.', category: 'app'},
-                  {type: '', id: 3, name: 'Smoked Trout and Rissoto', price: 0, description: 'This hickory-smoked Trout comes with a grilled rissoto cake, topped with whipped Ramp Butter', category: 'entree'},
-                  {type: '', id: 4, name: 'Chanterelle Creme Pasta', price: 0, description: 'Locally harvested Chanterelle\'s make up our house-favorite Creme pasta along with a vegetable medley over Fetticcine', category: 'entree'},
-                  {type: '', id: 5, name: 'Mahtzo Ball Soup', price: 0, description: 'A classic, does it need a description? We make our Mahtzo soup broth each day. For the best Mahtzo balls, we wait until you order to put it all together', category: 'dessert'},
-                  {type: '', id: 6, name: 'Strawberry Angel Cake', price: 0, description: 'A twist on the classic dessert Strawberry Short Cake, but with our favorite Angel Cake', category: 'dessert'},
-                  {type: '', id: 7, name: 'BlackBerry Peach Pie', price: 0, description: 'The name doesn\'t say it all. This blackberry peach pie contains subtle notes of chocolate-mint, honey, and bourbon.', category: 'dessert'},
-                  {type: '', id: 8, name: 'Key Lime Pie', price: 0, description: 'This pie captures the tanginess, sweetness, and creaminess that every Key Lime Pie should have', category: ''}]
+const foodItems = [
+  {type: '', key: 0, name: 'Pimento Cheese Ciabatta', price: '$4', description: 'Freshly baked Ciabatta bread, made with thyme and rosemary, served with pimento cheese', category: 'Appetizers'},
+  {type: '', key: 1, name: 'Chips and Cheese, pub-style', price: '$5', description: 'Fresh public-house-style chips made with Russet Potatos, served with your choice of blueu cheese', category: 'Appetizers'},
+  {type: '', key: 2, name: 'Charcuterie Board', price: '$6', description: 'Our specialty charcuterie board brings you our rosemary Focaccia, an assortment of the highest quality cheeses and meats available. Ask your server for today\'s Charcuterie.', category: 'Appetizers'},
+  {type: '', key: 3, name: 'Smoked Trout and Rissoto', price: '$16', description: 'This hickory-smoked Trout comes with a grilled rissoto cake, topped with whipped Ramp Butter', category: 'entree'},
+  {type: '', key: 4, name: 'Chanterelle Creme Pasta', price: '$12', description: 'Locally harvested Chanterelle\'s make up our house-favorite Creme pasta along with a vegetable medley over Fetticcine', category: 'entree'},
+  {type: '', key: 5, name: 'Mahtzo Ball Soup', price: '$14', description: 'A classic, does it need a description? We make our Mahtzo soup broth each day. For the best Mahtzo balls, we wait until you order to put it all together', category: 'dessert'},
+  {type: '', key: 6, name: 'Strawberry Angel Cake', price: '$5', description: 'A twist on the classic dessert Strawberry Short Cake, but with our favorite Angel Cake', category: 'dessert'},
+  {type: '', key: 7, name: 'BlackBerry Peach Pie', price: '$6', description: 'The name doesn\'t say it all. This blackberry peach pie contains subtle notes of chocolate-mint, honey, and bourbon.', category: 'dessert'},
+  {type: '', key: 8, name: 'Key Lime Pie', price: '$5', description: 'This pie captures the tanginess, sweetness, and creaminess that every Key Lime Pie should have', category: ''}]
 
 class Order extends Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     return (
@@ -48,50 +47,56 @@ class Order extends Component {
 
 }
 
-class MenuList extends Component {
-  constructor(props) {
-    super(props);
+// class FoodItem extends Component {
+//   render() {
+//     return (
+//
+//     )
+//   }
+// }
+//
+// class FoodList extends Component {
+//   render() {
+//     return (
+//       <FoodItem />
+//     )
+//   }
+// }
+
+
+class FoodList extends Component {
+  constructor() {
+    super();
+
   }
 
-    render() {
-      return (
+  showMe(foodItems, e) {
+    console.log(foodItems);
+  }
+  render() {
+    const test = foodItems.map((foodItems, key) => (
 
-        <div className='menu col-md-5 offset-1 mr-auto'>
-          <ul>
-          <li><h3>{this.props.category}</h3></li>
-            <ul>
-              <li>{this.props.name}</li>
-              <span>{this.props.description}</span>
-            </ul>
-            </ul>
+      <div className='menu col-md-5 offset-1 mr-auto'>
 
-          </div>
+        <h3>{foodItems.name}</h3>
 
+        <span>{foodItems.description}</span>
+        <button className='btn mr-5'  onClick={this.showMe.bind(this, foodItems)}><h6>{foodItems.price}</h6></button>
 
-    );
-    }
-}
+      </div>
+    ))
+    return (
+      <div>{test}</div>
+    )
+  }
 
-function Menu (props) {
-  const foods = foodItems.map((food, id) => (
-    <MenuList key={id} food={food}  />
-  )
-
-)
-return (
-  <ul className="">{foods}</ul>
-)
 }
 
 
 
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
 
-
-  }
 
   render() {
     return (
@@ -103,16 +108,20 @@ class Header extends Component {
 }
 
 class MenuPage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
 
     this.state = {
-      foodItems: [{type: '', id: 0, name: '', price: 0, description: '', category: ''}]
+      foodItems: [],
+      order: {}
     }
+    this.componentDidMount = this.componentDidMount.bind(this);
+
   }
 
   componentDidMount() {
-    this.setState(this.state);
+      this.setState({foodItems: foodItems});
+
   }
 
 
@@ -124,13 +133,13 @@ class MenuPage extends Component {
     <Header />
 
     <div className='row'>
-    <Menu menu={this.state.menu}/>
-    <MenuList menu={this.state.menu}/>
-    <Order />
+    <FoodList foodItems={this.state.foodItems}/>
+
+    <Order order={this.state.order}/>
     </div>
     </div>
   )
-}
-}
+}}
+
 
 export default MenuPage;
