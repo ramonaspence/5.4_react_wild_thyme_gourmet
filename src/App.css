@@ -42,7 +42,8 @@ span {
   background-color: #CBFFCF;
   margin-top: 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: start;
 
 }
 
