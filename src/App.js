@@ -22,15 +22,20 @@ class Order extends Component {
 
     }
 
-    subTotal(props) {
+
+    subTotal() {
       let reduceCallBack = (acc, curr) => (acc + curr);
       const priceList = [...this.props.order];
-      var prices = priceList.map(el => el.price)
+      const total = priceList.map(el => el.price)
 
-        .reduce(reduceCallBack,0)
-      console.log(prices);
+        .reduce(reduceCallBack,0);
+
+      console.log('total', total);
+  
+
 
       }
+
 
 
 
@@ -44,15 +49,15 @@ render() {
         </li>
 
       <li>${orderItem.price}</li>
-      </ul>
 
 
+        </ul>
       </div>
     ));
 
       return (
         <div className='order col-md-4 mr-auto'>{orderList}
-          <h6>Total: ${this.subTotal()}</h6>
+          <span>Total ${this.subTotal()}</span>
         </div>
 
     )
