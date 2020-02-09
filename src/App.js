@@ -4,15 +4,15 @@ import './App.css';
 
 //menu component needs to be iterated
 const staticFoodItems = [
-  {type: '', key: 0, name: 'Pimento Cheese Ciabatta', price: '4', description: 'Freshly baked Ciabatta bread, made with thyme and rosemary, served with pimento cheese', category: 'Appetizers'},
-  {type: '', key: 1, name: 'Chips and Cheese, pub-style', price: '5', description: 'Fresh public-house-style chips made with Russet Potatos, served with your choice of blueu cheese', category: 'Appetizers'},
-  {type: '', key: 2, name: 'Charcuterie Board', price: '6', description: 'Our specialty charcuterie board brings you our rosemary Focaccia, an assortment of the highest quality cheeses and meats available. Ask your server for today\'s Charcuterie.', category: 'Appetizers'},
-  {type: '', key: 3, name: 'Smoked Trout and Rissoto', price: '16', description: 'This hickory-smoked Trout comes with a grilled rissoto cake, topped with whipped Ramp Butter', category: 'entree'},
-  {type: '', key: 4, name: 'Chanterelle Creme Pasta', price: '12', description: 'Locally harvested Chanterelle\'s make up our house-favorite Creme pasta along with a vegetable medley over Fetticcine', category: 'entree'},
-  {type: '', key: 5, name: 'Mahtzo Ball Soup', price: '14', description: 'A classic, does it need a description? We make our Mahtzo soup broth each day. For the best Mahtzo balls, we wait until you order to put it all together', category: 'dessert'},
-  {type: '', key: 6, name: 'Strawberry Angel Cake', price: '5', description: 'A twist on the classic dessert Strawberry Short Cake, but with our favorite Angel Cake', category: 'dessert'},
-  {type: '', key: 7, name: 'BlackBerry Peach Pie', price: '6', description: 'The name doesn\'t say it all. This blackberry peach pie contains subtle notes of chocolate-mint, honey, and bourbon.', category: 'dessert'},
-  {type: '', key: 8, name: 'Key Lime Pie', price: '5', description: 'This pie captures the tanginess, sweetness, and creaminess that every Key Lime Pie should have', category: ''}]
+  {type: '', key: 0, name: 'Pimento Cheese Ciabatta', price: 4, description: 'Freshly baked Ciabatta bread, made with thyme and rosemary, served with pimento cheese', category: 'Appetizers'},
+  {type: '', key: 1, name: 'Chips and Cheese, pub-style', price: 5, description: 'Fresh public-house-style chips made with Russet Potatos, served with your choice of blueu cheese', category: 'Appetizers'},
+  {type: '', key: 2, name: 'Charcuterie Board', price: 6, description: 'Our specialty charcuterie board brings you our rosemary Focaccia, an assortment of the highest quality cheeses and meats available. Ask your server for today\'s Charcuterie.', category: 'Appetizers'},
+  {type: '', key: 3, name: 'Smoked Trout and Rissoto', price: 16, description: 'This hickory-smoked Trout comes with a grilled rissoto cake, topped with whipped Ramp Butter', category: 'entree'},
+  {type: '', key: 4, name: 'Chanterelle Creme Pasta', price: 12, description: 'Locally harvested Chanterelle\'s make up our house-favorite Creme pasta along with a vegetable medley over Fetticcine', category: 'entree'},
+  {type: '', key: 5, name: 'Mahtzo Ball Soup', price: 14, description: 'A classic, does it need a description? We make our Mahtzo soup broth each day. For the best Mahtzo balls, we wait until you order to put it all together', category: 'dessert'},
+  {type: '', key: 6, name: 'Strawberry Angel Cake', price: 5, description: 'A twist on the classic dessert Strawberry Short Cake, but with our favorite Angel Cake', category: 'dessert'},
+  {type: '', key: 7, name: 'BlackBerry Peach Pie', price: 6, description: 'The name doesn\'t say it all. This blackberry peach pie contains subtle notes of chocolate-mint, honey, and bourbon.', category: 'dessert'},
+  {type: '', key: 8, name: 'Key Lime Pie', price: 5, description: 'This pie captures the tanginess, sweetness, and creaminess that every Key Lime Pie should have', category: ''}]
 
 class Order extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class Order extends Component {
       let reduceCallBack = (acc, curr) => (acc + curr);
       const priceList = [...this.props.order];
       var prices = priceList.map(el => el.price)
-        .parseInt(prices, 10)
+
         .reduce(reduceCallBack,0)
       console.log(prices);
 
