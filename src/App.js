@@ -18,6 +18,10 @@ class Order extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      price: 0
+    }
+
     this.subTotal = this.subTotal.bind(this);
 
     }
@@ -31,7 +35,8 @@ class Order extends Component {
         .reduce(reduceCallBack,0);
 
       console.log('total', total);
-  
+      this.state.price = total;
+
 
 
       }
@@ -40,10 +45,10 @@ class Order extends Component {
 
 
 render() {
-
+    this.subTotal();
     const orderList = this.props.order.map((orderItem, key) => (
 
-      <div className='orderItems'>
+      <div key={key} className='orderItems'>
       <ul>
         <li>{orderItem.name}
         </li>
@@ -57,7 +62,7 @@ render() {
 
       return (
         <div className='order col-md-4 mr-auto'>{orderList}
-          <span>Total ${this.subTotal()}</span>
+          <li><span>Total ${this.state.price}</span></li>
         </div>
 
     )
@@ -72,7 +77,7 @@ class FoodList extends Component {
   render() {
     const test = this.props.foodItems.map((foodItems, key) => (
 
-      <div className='menu col-md-8 offset-1 mr-auto'>
+      <div key={key} className='menu col-md-8 offset-1 mr-auto'>
 
         <h3>{foodItems.name}</h3>
 
@@ -109,7 +114,8 @@ class MenuPage extends Component {
 
     this.state = {
       foodItems: [],
-      order: []
+      order: [],
+      totalPrice: 0
     }
     this.componentDidMount = this.componentDidMount.bind(this);
     this.showOrder = this.showOrder.bind(this);
