@@ -3,7 +3,11 @@
 }
 
 body {
-  background-color: #ABCCAA
+  background-image: url(thyme.jpg);
+  background-position: center;
+  background-size: cover;
+
+
 }
 
 ul {
@@ -27,23 +31,26 @@ span {
   text-align: center;
   height: 20vh;
   width: 100vw;
-  background-color: #CBFFCF;
+  background-color: #D9CFD9;
+  opacity: .65;
 }
 
 .menu {
   width: 60vw;
-  background-color: #CBFFCF;
+  background-color: #D9CFD9;
+  opacity: .65;
   margin-top: 2rem;
 }
 
 .order {
   text-align: justify;
-  width: 30vw;
-  background-color: #CBFFCF;
+  /* width: 30vw; */
+  background-color: #D9CFD9;
+  opacity: .65;
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 
 }
 
