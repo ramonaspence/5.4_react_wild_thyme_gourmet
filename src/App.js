@@ -62,7 +62,13 @@ render() {
 
       return (
         <div className='order col-md-4 mr-auto'>{orderList}
-          <li><span>Total ${this.state.price}</span></li>
+
+          {this.state.price
+            ?
+          <li><h3>Your Total ${this.state.price}</h3></li>
+            :
+          <li><h3>Click on prices to begin your order!</h3></li>
+        }
         </div>
 
     )

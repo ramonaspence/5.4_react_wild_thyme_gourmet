@@ -17,6 +17,7 @@ ul {
 
 li {
   font-size: 1.4rem;
+  list-style: none;
 }
 
 span {
