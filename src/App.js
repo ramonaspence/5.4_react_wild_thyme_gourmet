@@ -69,6 +69,8 @@ render() {
             :
           <li><h3>Click on prices to begin your order!</h3></li>
         }
+
+        <button className='btn' type='button'>Place Your Order Here</button>
         </div>
 
     )

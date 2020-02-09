@@ -10,6 +10,7 @@ body {
 
 }
 
+
 ul {
   padding: 0;
   list-style: none;
@@ -45,13 +46,18 @@ span {
 
 .order {
   text-align: justify;
-  /* width: 30vw; */
+  width: 30vw;
+  height: 2%;
   background-color: #D9CFD9;
   opacity: .65;
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+}
+
+.btn {
 
 }
 
