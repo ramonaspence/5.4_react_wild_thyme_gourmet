@@ -44,6 +44,8 @@ class Order extends Component {
 
 
 
+
+
 render() {
     this.subTotal();
     const orderList = this.props.order.map((orderItem, key) => (
@@ -70,7 +72,7 @@ render() {
           <li><h3>Click on prices to begin your order!</h3></li>
         }
 
-        <button className='btn' type='button'>Place Your Order Here</button>
+        <button className='btn' type='button' onClick={this.props.orderPlaced}>Place Your Order Here</button>
         </div>
 
     )
@@ -127,6 +129,7 @@ class MenuPage extends Component {
     }
     this.componentDidMount = this.componentDidMount.bind(this);
     this.showOrder = this.showOrder.bind(this);
+    this.orderPlaced = this.orderPlaced.bind(this);
   }
 
   componentDidMount() {
@@ -147,6 +150,12 @@ class MenuPage extends Component {
     this.props.showOrder(foodItems);
   }
 
+  orderPlaced(event) {
+    alert('Your order has been placed!');
+    this.setState({order: []})
+
+  }
+
 
   render() {
   return (
@@ -158,7 +167,7 @@ class MenuPage extends Component {
     <div className='row'>
     <FoodList showOrder={this.showOrder} order={this.state.order} foodItems={this.state.foodItems} showFoodItem={this.showFoodItem}/>
 
-    <Order showOrder={this.showOrder} order={this.state.order}/>
+    <Order orderPlaced={this.orderPlaced} showOrder={this.showOrder} order={this.state.order}/>
     </div>
     </div>
   )
