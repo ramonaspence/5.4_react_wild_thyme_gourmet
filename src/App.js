@@ -26,7 +26,6 @@ class Order extends Component {
 
     }
 
-
     subTotal() {
       let reduceCallBack = (acc, curr) => (acc + curr);
       const priceList = [...this.props.order];
@@ -37,14 +36,7 @@ class Order extends Component {
       console.log('total', total);
       this.state.price = total;
 
-
-
       }
-
-
-
-
-
 
 render() {
     this.subTotal();
@@ -56,7 +48,6 @@ render() {
         </li>
 
       <li>${orderItem.price}</li>
-
 
         </ul>
       </div>
@@ -80,9 +71,7 @@ render() {
 
 }
 
-
 class FoodList extends Component {
-
 
   render() {
     const test = this.props.foodItems.map((foodItems, key) => (
@@ -103,11 +92,7 @@ class FoodList extends Component {
 
 }
 
-
-
-
 class Header extends Component {
-
 
   render() {
     return (
